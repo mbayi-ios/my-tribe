@@ -3,7 +3,16 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Valentine Proposal</title>
+<title>Will You Be My Valentine? 💖</title>
+<meta name="description" content="A little something special, made with all my heart, just for you. Open it and see what's waiting inside 💕"/>
+<meta property="og:title" content="You Have a Special Message 💌"/>
+<meta property="og:description" content="Someone has something really sweet to ask you... tap to find out 💖"/>
+<meta property="og:image" content="meta.jpeg"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="You Have a Special Message 💌"/>
+<meta name="twitter:description" content="Someone has something really sweet to ask you... tap to find out 💖"/>
+<meta name="twitter:image" content="meta.jpeg"/>
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Google Fonts -->
@@ -192,9 +201,20 @@ yesBtn.addEventListener('click', function () {
         yesText.textContent = 'YAAAY! 🎉💖🎉';
         noBtn.style.display = 'none';
         launchConfetti();
+        // Fade out music before navigating
+        let fadeInterval = setInterval(function () {
+            if (bgMusic.volume > 0.05) {
+                bgMusic.volume -= 0.05;
+            } else {
+                clearInterval(fadeInterval);
+                bgMusic.pause();
+                window.location.href = 'code.html';
+            }
+        }, 100);
+        // Fallback redirect in case fade takes too long
         setTimeout(function () {
             window.location.href = 'code.html';
-        }, 3000);
+        }, 3500);
     }
 });
 
