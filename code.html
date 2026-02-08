@@ -75,9 +75,9 @@
 </div>
 <!-- The Frame -->
 <div class="size-64 rounded-full border-8 border-primary/20 p-2 bg-white dark:bg-white/5 shadow-2xl">
-<div class="size-full rounded-full overflow-hidden border-4 border-primary">
-<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Happy couple smiling together in a romantic outdoor setting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_huaf5VlfmODYQYn4u3k_w2wtabX1VECaDoeaJh_dec-c29qOlVv-A5UL82leV_EzB-stfSOAieNBAO5Uy8dT1xuP_Wh3lBl14APCbtl43rT-5veE5Q5RzrYl_oFePBEO2OAAU3iwsSdy-GJhqRGB0zcX8G6NaHlrfr3UMp84QOPCb9OyV_9sbGgUk8J1ZFrHgO_NSdwND5TTJaQs-uHtiNfqVZBlgaDGOauXuj-ZGYVs6swVFDauMKZl1kJONQtezQpzM6OHumtX");'>
-</div>
+<div class="size-full rounded-full overflow-hidden border-4 border-primary relative">
+<div id="slide-img" class="w-full h-full bg-center bg-no-repeat bg-cover absolute inset-0 transition-opacity duration-700" style='background-image: url("images/couple.jpg");'></div>
+<div id="slide-img-next" class="w-full h-full bg-center bg-no-repeat bg-cover absolute inset-0 opacity-0 transition-opacity duration-700"></div>
 </div>
 </div>
 </div>
@@ -155,5 +155,31 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+// Image slideshow
+const images = [
+    'images/couple.jpg',
+    'images/image-1.JPG',
+    'images/image-2.JPG',
+    'images/image-3.jpg',
+    'images/image-4.JPG',
+    'images/image-5.JPG'
+];
+let currentImg = 0;
+const slideImg = document.getElementById('slide-img');
+const slideImgNext = document.getElementById('slide-img-next');
+
+setInterval(function () {
+    currentImg = (currentImg + 1) % images.length;
+    slideImgNext.style.backgroundImage = 'url("' + images[currentImg] + '")';
+    slideImgNext.style.opacity = '1';
+    slideImg.style.opacity = '0';
+
+    setTimeout(function () {
+        slideImg.style.backgroundImage = 'url("' + images[currentImg] + '")';
+        slideImg.style.opacity = '1';
+        slideImgNext.style.opacity = '0';
+    }, 700);
+}, 3000);
 </script>
 </body></html>
