@@ -128,7 +128,37 @@
 <div class="fixed bottom-1/4 -right-10 opacity-10 -rotate-12">
 <span class="material-symbols-outlined text-[120px] text-primary">auto_awesome</span>
 </div>
+<audio id="bg-music" src="valentines.mp3" autoplay loop></audio>
+<button id="music-toggle" class="fixed bottom-6 right-6 z-50 flex items-center justify-center size-12 rounded-full bg-primary text-white shadow-lg hover:scale-110 transition-transform">
+<span id="music-icon" class="material-symbols-outlined">volume_up</span>
+</button>
 <script>
+// Music controls
+const bgMusic = document.getElementById('bg-music');
+const musicToggle = document.getElementById('music-toggle');
+const musicIcon = document.getElementById('music-icon');
+let musicStarted = false;
+
+musicToggle.addEventListener('click', function () {
+    if (bgMusic.paused) {
+        bgMusic.play();
+        musicIcon.textContent = 'volume_up';
+    } else {
+        bgMusic.pause();
+        musicIcon.textContent = 'volume_off';
+    }
+    musicStarted = true;
+});
+
+// Play music on first non-toggle interaction (browsers block autoplay)
+document.addEventListener('click', function (e) {
+    if (!musicStarted && e.target !== musicToggle && !musicToggle.contains(e.target)) {
+        bgMusic.play();
+        musicIcon.textContent = 'volume_up';
+        musicStarted = true;
+    }
+});
+
 function updateCountdown() {
     const valentine = new Date('February 14, 2026 00:00:00').getTime();
     const now = new Date().getTime();

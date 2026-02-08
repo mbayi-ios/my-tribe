@@ -125,8 +125,38 @@
 </div>
 </footer>
 </div>
+<audio id="bg-music" src="valentines.mp3" autoplay loop></audio>
+<button id="music-toggle" class="fixed bottom-6 right-6 z-50 flex items-center justify-center size-12 rounded-full bg-primary text-white shadow-lg hover:scale-110 transition-transform">
+<span id="music-icon" class="material-symbols-outlined">volume_up</span>
+</button>
 <canvas id="confetti-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99999;"></canvas>
 <script>
+// Music controls
+const bgMusic = document.getElementById('bg-music');
+const musicToggle = document.getElementById('music-toggle');
+const musicIcon = document.getElementById('music-icon');
+let musicStarted = false;
+
+musicToggle.addEventListener('click', function () {
+    if (bgMusic.paused) {
+        bgMusic.play();
+        musicIcon.textContent = 'volume_up';
+    } else {
+        bgMusic.pause();
+        musicIcon.textContent = 'volume_off';
+    }
+    musicStarted = true;
+});
+
+// Play music on first non-toggle interaction (browsers block autoplay)
+document.addEventListener('click', function (e) {
+    if (!musicStarted && e.target !== musicToggle && !musicToggle.contains(e.target)) {
+        bgMusic.play();
+        musicIcon.textContent = 'volume_up';
+        musicStarted = true;
+    }
+});
+
 // No button run away
 const noBtn = document.getElementById('no-btn');
 noBtn.addEventListener('mouseenter', function () {
