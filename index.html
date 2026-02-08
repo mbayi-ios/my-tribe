@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Valentine Proposal</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Dancing+Script:wght@700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4256a",
+                        "background-light": "#fff5f7",
+                        "background-dark": "#221016",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "cursive": ["Dancing Script", "cursive"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(34, 16, 22, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .heart-float {
+            position: absolute;
+            pointer-events: none;
+            color: #f4256a;
+            opacity: 0.3;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181113] dark:text-white transition-colors duration-300">
+<!-- Background Decorative Elements -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none">
+<span class="material-symbols-outlined heart-float text-4xl top-10 left-[10%]">favorite</span>
+<span class="material-symbols-outlined heart-float text-2xl top-1/4 left-[80%]">favorite</span>
+<span class="material-symbols-outlined heart-float text-5xl top-2/3 left-[5%]">favorite</span>
+<span class="material-symbols-outlined heart-float text-3xl bottom-10 right-[15%]">favorite</span>
+<span class="material-symbols-outlined heart-float text-xl top-1/2 right-[5%]">favorite</span>
+</div>
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top App Bar / Navigation -->
+<header class="flex items-center p-6 justify-between z-10">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">favorite</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 rounded-full glass-card shadow-sm">
+<span class="text-xs font-bold tracking-widest uppercase opacity-70">For My Love, Nivarna</span>
+</div>
+<div class="size-10"></div> <!-- Spacer for symmetry -->
+</header>
+<!-- Main Content Container -->
+<main class="flex-1 flex flex-col items-center justify-center px-6 pb-20">
+<!-- Hero Illustration Container -->
+<div class="w-full max-w-[340px] aspect-square relative mb-8 group">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-75 animate-pulse"></div>
+<div class="relative w-full h-full rounded-xl overflow-hidden bg-white dark:bg-zinc-900 shadow-2xl flex items-center justify-center border-4 border-white dark:border-zinc-800">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Cute animated teddy bear holding a big red heart" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDMEGKe26-3JC1z_Mu3XG8vZUO-KGnRgqKs2uofsXXiLEKsQ0X71kIoeAoNN2CjyOjbZVq-EjkgnAi2_Q6x9tbXrUwYwMidcDS0czZz8VN-rdry5hl3AHDKRDyi0S4VCJBR6jp6WLb-vZKDCHIxn_HVYk4cIWNHgNueh1z2NLfRXAoe2nIEjfRbF_xGAMJ1V-VvtNyJxjsHBMSHfe_vd1o7iN8yqkbfrnZSLelUqVUmH6ovKMKD1ISqKkL8KsQosZuwJQ5VSXfMBf-P");'>
+</div>
+</div>
+</div>
+<!-- Proposal Text -->
+<div class="text-center space-y-4 mb-12">
+<h1 class="font-cursive text-5xl md:text-6xl text-primary leading-tight drop-shadow-sm">
+                    Will you be my Valentine?
+                </h1>
+<p class="text-lg opacity-80 font-medium">
+                    You make every single day <br/> feel like a beautiful fairytale.
+                </p>
+</div>
+<!-- Action Buttons -->
+<div class="w-full max-w-sm space-y-4 px-4">
+<!-- Yes Button -->
+<button class="relative w-full h-16 rounded-full bg-primary text-white text-xl font-extrabold tracking-wide shadow-[0_0_25px_rgba(244,37,106,0.5)] hover:shadow-[0_0_35px_rgba(244,37,106,0.7)] transition-all flex items-center justify-center overflow-hidden">
+<span class="relative z-10 flex items-center gap-2">
+                        YES! 💖
+                    </span>
+<!-- Animated Shine Effect -->
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-1000"></div>
+</button>
+<!-- No Button (The playful one) -->
+<button class="w-full h-12 rounded-full bg-zinc-200 dark:bg-zinc-800 text-[#181113] dark:text-zinc-400 text-sm font-bold tracking-wide hover:scale-90 transition-all active:scale-75 flex items-center justify-center opacity-70">
+                    No, I'm thinking...
+                </button>
+</div>
+</main>
+<!-- Footer / Soft Hint -->
+<footer class="p-8 text-center">
+<div class="inline-flex items-center gap-2 text-primary/100 text-xs font-bold uppercase tracking-[0.4em]">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                Made with Love, T💖
+                <span class="material-symbols-outlined text-sm">auto_awesome</span>
+</div>
+</footer>
+</div>
+</body></html>
