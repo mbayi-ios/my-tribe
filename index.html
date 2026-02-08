@@ -111,7 +111,7 @@
 <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-1000"></div>
 </button>
 <!-- No Button (The playful one) -->
-<button class="w-full h-12 rounded-full bg-zinc-200 dark:bg-zinc-800 text-[#181113] dark:text-zinc-400 text-sm font-bold tracking-wide hover:scale-90 transition-all active:scale-75 flex items-center justify-center opacity-70">
+<button id="no-btn" class="h-12 rounded-full bg-zinc-200 dark:bg-zinc-800 text-[#181113] dark:text-zinc-400 text-sm font-bold tracking-wide transition-all flex items-center justify-center opacity-70 px-8 whitespace-nowrap">
                     No, I'm thinking...
                 </button>
 </div>
@@ -125,4 +125,17 @@
 </div>
 </footer>
 </div>
+<script>
+const noBtn = document.getElementById('no-btn');
+noBtn.addEventListener('mouseenter', function () {
+    const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+    const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+    noBtn.style.position = 'fixed';
+    noBtn.style.left = randomX + 'px';
+    noBtn.style.top = randomY + 'px';
+    noBtn.style.zIndex = '9999';
+});
+</script>
 </body></html>
